@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Extensions.Configuration;
 
 namespace Shared.Helpers
 {
-    public static class AppSettingHelper
+    public class AppConfiguration
     {
         private static IConfigurationRoot _configuration;
-        static AppSettingHelper()
+        public AppConfiguration()
         {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+            var builder = new ConfigurationBuilder();
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json");
+            builder.AddJsonFile(path, false);
+
             _configuration = builder.Build();
         }
         public static string GetSetting(string key)
