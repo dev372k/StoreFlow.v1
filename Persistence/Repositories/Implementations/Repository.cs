@@ -1,6 +1,6 @@
-﻿using DAL.Repositories.Interfaces;
+﻿using Persistence.Repositories.Interfaces;
 
-namespace DAL.Repositories.Implementations
+namespace Persistence.Repositories.Implementations
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {

@@ -1,4 +1,5 @@
-﻿using DAL.Repositories.Implementations;
+﻿using API.Models;
+using DAL.Repositories.Implementations;
 using DAL.Repositories.Interfaces;
 
 namespace API.Extensions
@@ -13,6 +14,8 @@ namespace API.Extensions
         public static void Misc(this IServiceCollection services)
         {
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddHttpContextAccessor();
+            //services.AddSingleton<IStateHelper, StateHelper>();
         }
     }
 }

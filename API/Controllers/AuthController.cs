@@ -15,6 +15,7 @@ namespace API.Controllers
             
         }
 
+        [HttpGet]
         public IActionResult Test()
         {
             try
@@ -23,7 +24,7 @@ namespace API.Controllers
             }
             catch (CustomException ex)
             {
-                throw new CustomException(ex.Message, new CustomExceptionModel { Message = ex.Message, StatusCode = 500 });
+                throw new CustomException(ex.Message, new CustomExceptionModel { Message = ex.Message, StatusCode = 200 });
             }
         }
     }
