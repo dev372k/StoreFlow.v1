@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Persistence.Repositories.Interfaces
 {
-    public interface IRepository<TEntity> where TEntity : class
+    public interface IRepository
     {
-        IEnumerable<TEntity> Search(object parameters, string query);
-        IEnumerable<Model> Search<Model>(object parameters, string query);
+        IEnumerable<T> Search<T>(object parameters, string query);
     }
 }

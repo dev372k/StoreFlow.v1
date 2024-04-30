@@ -2,21 +2,17 @@
 
 namespace Persistence.Repositories.Implementations
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
+    public class Repository : IRepository
     {
         public Repository()
         {
 
         }
 
-        public IEnumerable<TEntity> Search(object parameters, string query)
+        public IEnumerable<T> Search<T>(object parameters, string query)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Model> Search<Model>(object parameters, string query)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
